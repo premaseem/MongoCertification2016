@@ -10,7 +10,7 @@ def index(param1,param2):
 
 @route('/')
 def index_page():
-    return 'This is index page'
+    return 'This is index page \n '
 
 
 @route('/test')
