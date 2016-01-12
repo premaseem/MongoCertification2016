@@ -19,6 +19,7 @@ except Exception as e:
     print "insert failed:", e
 
 print doc
+doc = {'firstname':'Andrewa', 'lastname':'Erlichson'}
 print "inserting again"
 
 try:
