@@ -13,7 +13,9 @@ db = connection.test
 # handle to names collection
 names = db.names
 
+names.insert({'name':'prem singh '})
 item = names.find_one()
+
 
 print item['name']
 
