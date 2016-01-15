@@ -6,3 +6,4 @@ for (student_id = 0; student_id < 100; student_id++) {
 	db.scores.insert(r);
     }
 }
+
