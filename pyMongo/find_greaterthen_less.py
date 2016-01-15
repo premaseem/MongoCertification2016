@@ -15,8 +15,8 @@ def find():
 
     print "find, reporting for duty"
 
-    query = {'type':'exam', 'score':{'$gt':50, '$lt':70}}
-
+    # query = {'type':'exam', 'score':{'$gt':50, '$lt':70}}
+    query = {'type':'quiz', 'score' : {'$gt' : 20 , '$lt' : 90}  }
     try:
         cursor = scores.find(query)
 
@@ -29,6 +29,7 @@ def find():
         sanity += 1
         if (sanity > 10):
             break
+
 
 
 find()
