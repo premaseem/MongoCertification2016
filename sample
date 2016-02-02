@@ -1,0 +1,134 @@
+
+
+
+Insert + update = Upsert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search in array with element match
+
+MySQL
+
+select name,rank from table name where condition1 and condition 2 or condition 3
+
+db.collection.find( { param 1 filter} , { param 2 projection / selected columns  }     )
+
+
+# or query
+db.collection.find({
+"key":"value for and"
+,$or : [
+{condition1},
+{condition2},
+{condition3}
+]
+})
+
+
+db.hotels.find({ $or : [ {"cuisine" : "Italian"}, {"name" : "Wendy'S"}, { "borough" : "Brooklyn", } ] , "address.zipcode" : "10306" }).count()
+db.hotels.find({"address.zipcode" : "10306"})
+
+
+
+
+
+
+
+
+
+
+db.hotels.find({
+$or : [
+{"cuisine" : "Hamburgers"},
+{"name" : "Wendy'S"},
+{ "borough" : "Brooklyn", }
+]
+})
+
+
+db.hotels.find({
+"cuisine" : "Hamburgers"
+"name" : "Wendy'S",
+ "borough" : "Brooklyn" }
+)
+
+
+"address.zipcode" : "11225"
+
+{
+	"_id" : ObjectId("56a5ac4a74b8c0cc8257a59b"),
+	"address" : {
+		"building" : "469",
+		"coord" : [
+			-73.961704,
+			40.662942
+		],
+		"street" : "Flatbush Avenue",
+		"zipcode" : "11225"
+	},
+	"borough" : "Brooklyn",
+	"cuisine" : "Hamburgers",
+	"grades" : [
+		{
+			"date" : ISODate("2014-12-30T00:00:00Z"),
+			"grade" : "A",
+			"score" : 8
+		},
+		{
+			"score" : 23,
+			"date" : ISODate("2014-07-01T00:00:00Z"),
+			"grade" : "B"
+		},
+		{
+			"date" : ISODate("2013-04-30T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		},
+		{
+			"date" : ISODate("2012-05-08T00:00:00Z"),
+			"grade" : "A",
+			"score" : 12
+		}
+	],
+	"name" : "Wendy'S",
+	"restaurant_id" : "30112340"
+}
+
+db.hotels.find({"address.zipcode" : "10306", $or : [ {"cuisine" : "Italian"}, {"name" : "Wendy'S"}, { "borough" : "Brooklyn", } ]}).pretty()
+> db.hotels.find({ "cuisine" : {$in : ["Hamburgers","Baking"] }} )
+
+
+
+MongoDb Tutorial 31 : How to rename the database in mongoDB
+
+This video is part of Mongo DB Tutorial. Feel free to leave your question in comment :-)
+MongoDb Tutorial Home Page link : https://www.youtube.com/playlist?list=PL13Vva6TJcSsAFUsZwYpJOfR-ENWypLAe
+
+
+#Tags
+MongoDB, Mongo, Mongo Tutorial MongoDB Tutorial, Mongodb class, mongodb rename, rename database, rename in mongodb
